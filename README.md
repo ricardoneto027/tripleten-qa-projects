@@ -10,6 +10,7 @@ Cada sprint tem a sua pasta com test cases, bug reports e artefactos relevantes.
 ✏️ Olá, sou o **Ricardo Peres**! Sou um designer Gráfico com cerca de 5 anos de experiência, apaixonado por usar o design para comunicar ideias e criar ligações significativas entre marcas e pessoas.
 Trabalhei em ambientes corporativos e de agência, colaborando com equipas como no BNP Paribas e na NERVE, onde desenvolvi identidades visuais, brochuras e materiais gráficos que combinam clareza, criatividade e comunicação estratégica.
 Hoje continuo a criar experiências visuais que equilibram criatividade e usabilidade.
+
 💻 Atualmente estou a expandir as minhas competências em Software Testing e Quality Assurance (QA) através de um bootcamp da TripleTen, onde estou a ganhar experiência prática em test analysis, test design, manual testing, API testing, bug reporting e quality processes.
 Localização: Lisboa, Portugal  
 LinkedIn: [linkedin.com/in/ricardo-peres027](#)

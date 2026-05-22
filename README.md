@@ -12,6 +12,7 @@ Trabalhei em ambientes corporativos e de agência, colaborando com equipas como 
 Hoje continuo a criar experiências visuais que equilibram criatividade e usabilidade.
 
 💻 Atualmente estou a expandir as minhas competências em Software Testing e Quality Assurance (QA) através de um bootcamp da TripleTen, onde estou a ganhar experiência prática em test analysis, test design, manual testing, API testing, bug reporting e quality processes.
+
 Localização: Lisboa, Portugal  
 LinkedIn: [linkedin.com/in/ricardo-peres027](#)
 

@@ -1,4 +1,4 @@
-Checklist para o "Método de Pagamento"
+## Checklist para o "Método de Pagamento"
 
 |                                             | Descricao da revisao                                                                                          | Status do ambiente   | Link para o relatorio de bug                       |
 | :------------------------------------------ | :------------------------------------------------------------------------------------------------------------ | :------------------- | :------------------------------------------------- |

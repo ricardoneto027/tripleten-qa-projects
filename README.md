@@ -36,13 +36,12 @@ LinkedIn: [linkedin.com/in/ricardo-peres027](#)
 - **Bug tracking**: Jira
 - **API testing**: Postman
 - **Mobile testing**: Android Studio (emulador Pixel 5)
-- **Documentação**: Confluence
 
 ---
 
 ## ✅ Projetos avaliados
 
-Todos os projetos foram submetidos e aprovados por revisores certificados da TripleTen.
+Todos os projetos neste Repositório foram submetidos e aprovados por revisores certificados da TripleTen.
 
 ---
 

@@ -15,6 +15,14 @@ A collection completa está disponível no ficheiro `TripleTen_postman_collectio
 
 ---
 
+## Ferramentas utilizadas
+
+- **Postman** — execução dos testes
+- **Jira** — registo de bugs
+- **Urban Grocers API** — ambiente de testes TripleTen
+
+---
+
 ## POST /api/v1/kits/:id/products — Adicionar produtos a um kit
 
 | ID | Título | Dados enviados | Resultado esperado | Resultado real | Status | Bug |
@@ -73,11 +81,3 @@ A collection completa está disponível no ficheiro `TripleTen_postman_collectio
 | PS4TDA-5 | POST /order-and-go/v1/delivery | `clientDeliveryCost` incorreto para `productsWeight: 6.1kg` — retorna 0 em vez de 9 | [ver bug](https://ricardoneto027.atlassian.net/browse/PS4TDA-5) |
 | PS4TDA-6 | POST /order-and-go/v1/delivery | `isItPossibleToDeliver` retorna `true` para `deliveryTime: 7` quando devia ser `false` | [ver bug](https://ricardoneto027.atlassian.net/browse/PS4TDA-6) |
 | PS4TDA-7 | POST /order-and-go/v1/delivery | `isItPossibleToDeliver` retorna `true` para `deliveryTime: 23` quando devia ser `false` | [ver bug](https://ricardoneto027.atlassian.net/browse/PS4TDA-7) |
-
----
-
-## Ferramentas utilizadas
-
-- **Postman** — execução dos testes
-- **Jira** — registo de bugs
-- **Urban Grocers API** — ambiente de testes TripleTen

@@ -1,0 +1,965 @@
+{
+  "info": {
+    "_postman_id": "5afd41c8-2cf0-4398-a182-edfbc62c0394",
+    "name": "TripleTen",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54355980",
+    "_collection_link": "https://go.postman.co/collection/54355980-5afd41c8-2cf0-4398-a182-edfbc62c0394?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"name\": \"Apple MacBook Pro 16\",\n   \"data\": {\n      \"year\": 2019,\n      \"price\": 1849.99,\n      \"CPU model\": \"Intel Core i9\",\n      \"Hard disk size\": \"1 TB\"\n   }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.restful-api.dev/objects",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restful-api",
+            "dev"
+          ],
+          "path": [
+            "objects"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter uma lista de kits no cartão 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits?cardId=1",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits"
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um kit vazio com parâmetros inválidos - BUG",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \n    \"cardId\": 1,\n    \"name\": \"Para#$%\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um kit vazio ERROR",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"cardId\": 1\n    \"name\": \"Into space\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits?cardId=1",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits"
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter uma lista de kits com produtos que são aprovados pela condição da solicitação",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ids\": [\n        1,\n        2\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/products/kits",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "kits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter uma lista de produtos no kit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits/search?name=Into+space",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Into+space"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verificar os custos de envio",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"products\": [\r\n{\"id\": 1, \"quantity\": 3}\r\n],\r\n\"deliveryTime\": 6\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/couriers/check",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "couriers",
+            "check"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'https://d7ee3833-e90e-40b1-8ba0-a40c2aa75444.containerhub.tripleten-services.com/api/v1/kits' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\"cardId\": 1}, \"name\": \"Faça uma torta\"} '"
+      },
+      "response": []
+    },
+    {
+      "name": "Criar na Base de Dados",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Kit com novo nome\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://cnt-9fd9a604-977d-4706-a000-82a0158fdf59.containerhub.tripleten-services.com/api/v1/kits/9",
+          "protocol": "https",
+          "host": [
+            "cnt-9fd9a604-977d-4706-a000-82a0158fdf59",
+            "containerhub",
+            "tripleten-services",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete da Base de Dados",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://cnt-9fd9a604-977d-4706-a000-82a0158fdf59.containerhub.tripleten-services.com/api/v1/kits/8",
+          "protocol": "https",
+          "host": [
+            "cnt-9fd9a604-977d-4706-a000-82a0158fdf59",
+            "containerhub",
+            "tripleten-services",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter todos os logs do servidor",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/logs/main",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "logs",
+            "main"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter todos os logs do Depósito",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/logs/secondary",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "logs",
+            "secondary"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verificar a disponibilidade dos itens nos depósitos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"deliveryTime\": 12,\n    \"products\": [\n        {\n            \"id\": 5,\n            \"quantity\": 1\n        },\n        {\n            \"id\": 4,\n            \"quantity\": 5\n        }\n    ]\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/everything-you-need/v1/calculate",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "everything-you-need",
+            "v1",
+            "calculate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter todos os kits do Cartão 2",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits?cardId=2",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits"
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Adicionar produtos ao Kit 6",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"productsList\": [\n        {\n            \"id\": 22,\n            \"quantity\": -1\n        },\n        {\n            \"id\": 23,\n            \"quantity\": -1\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits/6/products",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "6",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter lista de produtos no Kit 6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits/6",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar kit 8 com script 20 produtos",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "const alreadyInKit = []; // kit vazio, sem exceções",
+              "const totalToAdd = 29;",
+              "",
+              "let productsList = [];",
+              "let id = 1;",
+              "",
+              "while (productsList.length < totalToAdd) {",
+              "    if (!alreadyInKit.includes(id)) {",
+              "        productsList.push({ \"id\": id, \"quantity\": 1 });",
+              "    }",
+              "    id++;",
+              "}",
+              "",
+              "pm.environment.set(\"productsList\", JSON.stringify(productsList));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"productsList\": {{productsList}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits/8/products",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "8",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar kit com ID inexistente",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"productsList\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits/8/products",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "8",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Entrega: \"Order and Go\"",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"productsList\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits/8/products",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "8",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CSV de todos os produtos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server_url}}/api/db/resources/product_model.csv",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "db",
+            "resources",
+            "product_model.csv"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pesquisar nos kits por itens",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ids\": [\n        20,\n        21\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/products/kits",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "kits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Teste Positivo - Criar um kit no Cartão 1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"cardId\": 1,\n    \"name\": \"Salada Fresca\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Teste Negativo - Eliminar um kit",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/kits/8",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter todos os kits do cartão 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server_url}}/api/v1/cards/1/kits",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cards",
+            "1",
+            "kits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obter todos os Produtos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server_url}}/api/v1/cards/1/kits",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cards",
+            "1",
+            "kits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um novo User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"Max\",\n    \"phone\": \"+10005553535\",\n    \"address\": \"8042 Lancaster Ave.Hamburg, NY\",\n    \"email\": \"pamela@example.com\",\n    \"comment\": \"cuidado com o cão\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/users",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um novo User 1 char",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"M\",\n    \"phone\": \"+10005553535\",\n    \"address\": \"8042 Lancaster Ave.Hamburg, NY\",\n    \"email\": \"pamela@example.com\",\n    \"comment\": \"cuidado com o cão\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/users",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um novo User 1 char",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"M\",\n    \"phone\": \"+10005553535\",\n    \"address\": \"8042 Lancaster Ave.Hamburg, NY\",\n    \"email\": \"pamela@example.com\",\n    \"comment\": \"cuidado com o cão\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/users",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um novo User 7+ char",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"Maximus\",\n    \"phone\": \"+10005553535\",\n    \"address\": \"8042 Lancaster Ave.Hamburg, NY\",\n    \"email\": \"pamela@example.com\",\n    \"comment\": \"cuidado com o cão\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/users",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um novo User Telefone 0-9 char",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"firstName\": \"Pamela\",\n\"phone\": \"+19998887\",\n\"address\": \"Seattle, 100th Ave 750\",\n\"email\": \"pamela@example.com\",\n\"comment\": \"Beware of the dog\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/users",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um novo User Telefone 10-12 char",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"Maximus\",\n    \"phone\": \"+10005553535\",\n    \"address\": \"8042 Lancaster Ave.Hamburg, NY\",\n    \"email\": \"pamela@example.com\",\n    \"comment\": \"cuidado com o cão\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/users",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar um novo User Telefone 13 ou + char BUG",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"Maximus\",\n    \"phone\": \"+1000555378587875535555\",\n    \"address\": \"8042 Lancaster Ave.Hamburg, NY\",\n    \"email\": \"pamela@example.com\",\n    \"comment\": \"cuidado com o cão\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server_url}}/api/v1/users",
+          "host": [
+            "{{server_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

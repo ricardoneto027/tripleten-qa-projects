@@ -70,26 +70,19 @@ Exemplo da estrutura de um método do Page Object:
 
 ```python
 def fill_card(self, card_number, card_code):
-    self.driver.find_element(*self.ADD_PAYMENT_METHOD).click()
-    self.driver.find_element(*self.ADD_CARD).click()
-    time.sleep(1)
+    self.wait.until(EC.element_to_be_clickable(self.ADD_PAYMENT_METHOD)).click()
+    self.wait.until(EC.element_to_be_clickable(self.ADD_CARD)).click()
 
-    self.driver.find_element(*self.CARD_NUMBER).send_keys(card_number)
-    time.sleep(1)
-
-    code_field = self.driver.find_element(*self.CARD_CODE)
+    self.wait.until(EC.visibility_of_element_located(self.CARD_NUMBER)).send_keys(card_number)
+    code_field = self.wait.until(EC.visibility_of_element_located(self.CARD_CODE))
     code_field.click()
     code_field.send_keys(card_code)
     code_field.send_keys(Keys.TAB)
-    time.sleep(1)
-
-    self.driver.find_element(*self.ADD_CARD_FINAL).click()
-    time.sleep(1)
-
-    close_button = self.wait.until(EC.element_to_be_clickable(self.CLOSE_BUTTON_CARD))
-    close_button.click()
-    time.sleep(1)
+    self.wait.until(EC.element_to_be_clickable(self.ADD_CARD_FINAL)).click()
+    self.wait.until(EC.element_to_be_clickable(self.CLOSE_BUTTON_CARD)).click()
 ```
+
+Note que todas as esperas foram substituídas por condições explícitas do Selenium (`WebDriverWait` + `expected_conditions`), eliminando os antigos `time.sleep()` fixos — uma prática mais robusta e mais rápida, porque a espera termina assim que a condição é satisfeita, em vez de aguardar sempre um tempo fixo.
 
 ### Padrão "Safe Click" (retry pattern)
 

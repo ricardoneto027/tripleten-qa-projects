@@ -18,7 +18,7 @@ Cada sprint tem a sua pasta com test cases, bug reports, scripts de automação 
 | `sprint-5-urban-lunch-mobile/`    | Sprint 5 | Urban Lunch   | Testes mobile — checklist de requisitos com emulador Android Studio (Pixel 5)                                       |
 | `sprint-6-linux-sql/`             | Sprint 6 | Urban Routes  | Análise de logs via SSH/Linux e consultas SQL sobre base de dados PostgreSQL de táxis de Chicago                    |
 | `sprint-7-automation-setup/`      | Sprint 7 | Urban Routes  | Base da suite de automação — dados de teste, helpers e estrutura Pytest para a classe `TestUrbanRoutes`             |
-| `sprint-8-automation/` *(em breve)* | Sprint 8 | Urban Routes  | Automação end-to-end do fluxo de reserva com Python + Selenium WebDriver (a publicar após aprovação final)          |
+| `sprint-8-automation-selenium/`   | Sprint 8 | Urban Routes  | Automação end-to-end do fluxo de reserva com Python + Selenium WebDriver                                            |
 
 ---
 

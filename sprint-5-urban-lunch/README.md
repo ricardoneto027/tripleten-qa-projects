@@ -1,4 +1,4 @@
-# Sprint 5 — Mobile Testing: Urban Lunch
+# Sprint 5 — Urban Lunch: Mobile Testing
 
 Testes de aplicação mobile realizados sobre a app **Urban Lunch**,
 com foco na verificação de requisitos funcionais através de emulação.

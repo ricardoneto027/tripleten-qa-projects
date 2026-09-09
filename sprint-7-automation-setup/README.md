@@ -1,4 +1,4 @@
-# 🧪 Sprint 7 — Introdução à Automação de Testes (Urban Routes)
+# 🧪 Sprint 7 —  Urban Routes: Introdução à Automação de Testes
 
 ## 📋 Sobre o projeto
 

@@ -1,4 +1,4 @@
-# QA Brazil — Urban Routes | Automação de Testes com Python + Selenium
+# Sprint 8 — Urban Routes: Automação de Testes com Python + Selenium
 
 Projeto do **Sprint 8** do bootcamp de QA/Software Testing da **TripleTen**, com automação end-to-end do fluxo de pedido de viagem da aplicação fictícia **Urban Routes**, usando **Python**, **Selenium WebDriver** e **pytest**, seguindo o padrão de design **Page Object Model (POM)**.
 

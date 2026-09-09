@@ -1,4 +1,4 @@
-# Sprint Final — Testes do Urban Scooter (Web, Mobile e Backend/API)
+# Sprint Final — Urban Scooter: Testes Web, Mobile e Backend/API
 
 Projeto final do bootcamp de QA (TripleTen), focado em testar de ponta a ponta a aplicação **Urban Scooter**: a interface web, a aplicação mobile e o backend/API. O objetivo foi analisar requisitos, desenhar casos de teste, executá-los, reportar bugs no Jira e documentar os resultados.
 

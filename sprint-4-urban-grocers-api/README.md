@@ -1,4 +1,4 @@
-## Sprint 4 — API Testing: Urban Grocers
+## Sprint 4 — Urban Grocers: API Testing
 
 Testes de API realizados sobre o back-end da aplicação **Urban Grocers** utilizando Postman, cobrindo endpoints de criação, consulta e eliminação de recursos.
 

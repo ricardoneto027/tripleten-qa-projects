@@ -1,4 +1,4 @@
-# Sprint 1 — Teste de Regressão: Urban Routes
+# Sprint 1 — Urban Routes: Teste de Regressão
 
 Primeiro projeto do bootcamp. Introdução à análise de QA através de testes de regressão
 sobre a aplicação **Urban Routes**, com documentação de casos de teste e bug reports.

@@ -1,4 +1,3 @@
-[sprint6-README.md](https://github.com/user-attachments/files/29476021/sprint6-README.md)
 # Sprint 6 — Linux, SSH e SQL: Servidor de Táxis de Chicago
 
 Projeto prático em duas partes: análise de logs num servidor remoto via SSH
